@@ -1,0 +1,27 @@
+/* ===== Claude AI - RTL Persian Support =====
+   Direction is decided per element by content.js (Persian -> RTL, else LTR).
+   This stylesheet only guarantees that code always stays LTR.
+   The old global RTL rules were removed because they forced English/prompts
+   to be right-aligned too — that was the bug. */
+
+/* Code blocks and inline code: always LTR */
+pre,
+code,
+.font-claude-message pre,
+.font-claude-message code,
+.font-user-message pre,
+.font-user-message code,
+[class*="prose"] pre,
+[class*="prose"] code,
+[data-testid="assistant-turn-content"] pre,
+[data-testid="assistant-turn-content"] code,
+[data-testid="user-message"] pre,
+[data-testid="user-message"] code {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: normal !important;
+}
+
+pre {
+  overflow-x: auto !important;
+}

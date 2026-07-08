@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "راست‌چین فارسی برای Claude و LinkedIn",
+  "version": "1.2.1",
+  "description": "متن فارسی در Claude AI و LinkedIn را راست‌چین می‌کند؛ متن انگلیسی و کدها چپ‌چین باقی می‌مانند",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://claude.ai/*",
+        "https://www.linkedin.com/*",
+        "https://linkedin.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["rtl.css"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Claude RTL - راست‌چین فارسی"
+  }
+}
